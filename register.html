@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REGISTRATION</title>
+    <link rel="stylesheet" href="align.css" />
+  </head>
+  <body>
+    <form action="http://localhost/myphp/check.php" method="post">
+    <div>
+      <head><h1>PROFILE PAGE</h1></head>
+    </div>
+    <div >
+      <label for="Username">Username</label>  <input type="text" name="Username" id="" placeholder="ENTER YOUR NAME" />
+    </div>
+    <div>
+      <label for="age">age</label> <input type="text" name="age" id="" placeholder="ENTER YOUR AGE"/>
+    </div>
+    <div>
+      <label for="dob">dob</label> <input type="text" name="dob" id="" placeholder="ENTER YOUR DOB" />
+    </div>
+    <div>
+      <label for="contact">contact</label>
+      <input type="text" name="contact" id="" placeholder="ENTER YOUR contact"/>
+    </div>
+   
+    <div>
+      <input type="submit" 
+      value="update"
+              name="update"
+              id="" >
+            </form>
+  </div>
+  </body>
+  <script src="/lib/jquery.js"></script>
+  <script src="/dist/jquery.validate.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("form").validate({
+        rules:{
+          Username:{
+            required:true,
+            minlength:3
+          },
+          age:{
+            required:true,
+            minlength:1
+          },
+          dob:{
+            required:true,
+            minlength:2
+          },
+          contact:{
+            required:true,
+            minlength:10
+          }
+        },
+        messages:{
+          Username:
+          {
+            required:"please enter your name",
+            minlength:"name should be atleast 3 characters"
+          },
+          age:
+          {
+            required:"please enter your age",
+            minlength:"age should be atleast 2 characters"
+          },
+          dob:
+          {
+            required:"please enter your dob",
+            minlength:"dob should be atleast 2 characters"
+          },
+          contact:
+          {
+            required:"please enter your contact",
+            minlength:"contact should be atleast 10 characters"
+          }
+        }
+      });
+});
+alert("hello");
+  </script>
+</html>
